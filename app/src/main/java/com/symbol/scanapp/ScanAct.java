@@ -30,7 +30,7 @@ public class ScanAct extends Activity implements View.OnClickListener, Scanner.S
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.main2);
         button = (Button) findViewById(R.id.button);
         result = (TextView) findViewById(R.id.result);
         button.setOnClickListener(this);
@@ -81,7 +81,9 @@ public class ScanAct extends Activity implements View.OnClickListener, Scanner.S
         Log.d("ScanAct",String.valueOf(keyCode));
 
         // 102,103,104 the desire key.
-
+        if(keyCode == KeyEvent.KEYCODE_BUTTON_L1 || keyCode == KeyEvent.KEYCODE_BUTTON_R1 || keyCode == KeyEvent.KEYCODE_BUTTON_L2){
+            return true;
+        }
         return super.onKeyDown(keyCode, event);
     }
 }
