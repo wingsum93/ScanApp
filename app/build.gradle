@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 android {
-    compileSdkVersion 'Zebra Technologies:Symbol Add-On:19'
+    compileSdkVersion 22
     buildToolsVersion "23.0.3"
 
     defaultConfig {
@@ -18,7 +18,9 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:19.1.0'
+    compile fileTree(dir: 'lib', include: ['*.jar'],excludes: ['mediatek-android.jar','com.symbol.emdk.jar'])
+    provided fileTree(dir: 'lib',include: ['mediatek-android.jar','com.symbol.emdk.jar']);
+    compile 'com.android.support:appcompat-v7:22.1.0'
 
     compile 'com.squareup.okhttp3:okhttp:3.2.0'
 }
